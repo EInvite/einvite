@@ -9,6 +9,7 @@ import com.einvite.data.entities.Event;
 import com.einvite.data.repo.EventRepository;
 
 @RestController
+@RequestMapping("/einvite")
 public class EventController {
 
 	@Autowired
