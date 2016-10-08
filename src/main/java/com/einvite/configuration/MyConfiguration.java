@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class MyConfiguration {
 
-	public static final String ZOMATO_URL = "https://developers.zomato.com/api/v2.1/collections";
+	public static final String ZOMATO_BASE_URL = "https://developers.zomato.com/api/v2.1";
 	public static final String ZOMATO_USERKEY = "fbe213d1034b7748f97638f8e2cb70b4";
 	
 	@Bean
