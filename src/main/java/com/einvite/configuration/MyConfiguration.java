@@ -12,6 +12,9 @@ public class MyConfiguration {
 	public static final String ZOMATO_BASE_URL = "https://developers.zomato.com/api/v2.1";
 	public static final String ZOMATO_USERKEY = "fbe213d1034b7748f97638f8e2cb70b4";
 	
+	public static final String EVENT_BRITE_BASEURL = "https://www.eventbriteapi.com/v3";
+	public static final String EVENTBRITE_USERKEY = "LFGGOFQDUU3JZBILDAX4";
+	
 	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();
@@ -24,5 +27,14 @@ public class MyConfiguration {
 		zomatoHeaders.set("user-key", ZOMATO_USERKEY);
 		zomatoHeaders.setContentType(MediaType.APPLICATION_JSON);
 		return zomatoHeaders;
+	}
+	
+	@Bean("eventBriteHeaders")
+	HttpHeaders getEventBriteHttpHeader() {
+		HttpHeaders eventBriteHeaders = new HttpHeaders();
+		eventBriteHeaders.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		//eventBriteHeaders.set("user-key", EVENTBRITE_USERKEY);
+		eventBriteHeaders.setContentType(MediaType.APPLICATION_JSON);
+		return eventBriteHeaders;
 	}
 }

@@ -18,7 +18,7 @@ import com.einvite.utils.RestServiceUtils;
 @RequestMapping("/zomato")
 public class ZomatoController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(RestServiceUtils.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ZomatoController.class);
 
 	@Autowired
 	RestServiceUtils restServiceUtils;
