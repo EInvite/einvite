@@ -15,6 +15,10 @@ public class MyConfiguration {
 	public static final String EVENT_BRITE_BASEURL = "https://www.eventbriteapi.com/v3";
 	public static final String EVENTBRITE_USERKEY = "LFGGOFQDUU3JZBILDAX4";
 	
+	public static final String YELLOW_PAGES_BASEURL = "http://api.sandbox.yellowapi.com";
+	public static final String YELLOW_PAGES_USERKEY = "su32w9u9j2y8vwapp6jz5peb";
+	public static final String YELLOW_PAGES_APIKEY = "metx4k29k4pmb69yzemd43z2";
+	
 	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();
@@ -36,5 +40,14 @@ public class MyConfiguration {
 		//eventBriteHeaders.set("user-key", EVENTBRITE_USERKEY);
 		eventBriteHeaders.setContentType(MediaType.APPLICATION_JSON);
 		return eventBriteHeaders;
+	}
+	
+	@Bean("yellowPagesHeaders")
+	HttpHeaders getYellowPagesHttpHeader() {
+		HttpHeaders yellowPagesHeaders = new HttpHeaders();
+		yellowPagesHeaders.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		//eventBriteHeaders.set("user-key", EVENTBRITE_USERKEY);
+		yellowPagesHeaders.setContentType(MediaType.APPLICATION_JSON);
+		return yellowPagesHeaders;
 	}
 }
