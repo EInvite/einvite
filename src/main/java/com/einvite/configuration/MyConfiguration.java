@@ -19,6 +19,9 @@ public class MyConfiguration {
 	public static final String YELLOW_PAGES_USERKEY = "su32w9u9j2y8vwapp6jz5peb";
 	public static final String YELLOW_PAGES_APIKEY = "metx4k29k4pmb69yzemd43z2";
 	
+	public static final String MEETUP_APIKEY = "5f5f65c2b1d291a654b347e701d5936";
+	public static final String MEETUP_BASEURL = "https://api.meetup.com/";
+	
 	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();
@@ -49,5 +52,14 @@ public class MyConfiguration {
 		//eventBriteHeaders.set("user-key", EVENTBRITE_USERKEY);
 		yellowPagesHeaders.setContentType(MediaType.APPLICATION_JSON);
 		return yellowPagesHeaders;
+	}
+	
+	@Bean("meetupHeaders")
+	HttpHeaders getMeetupHttpHeader() {
+		HttpHeaders meetupHeaders = new HttpHeaders();
+		meetupHeaders.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		//eventBriteHeaders.set("user-key", EVENTBRITE_USERKEY);
+		meetupHeaders.setContentType(MediaType.APPLICATION_JSON);
+		return meetupHeaders;
 	}
 }
